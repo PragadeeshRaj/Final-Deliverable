@@ -13,6 +13,12 @@ Here are some alternatives to running this program in case you don't want to jus
 * Click on the this link: http://76.176.59.167/ or type 76.176.59.167 onto your browser window. 
 * If you go with this option, you will unfortunately not be able to see our README.md explaining our progress and ways you can interact with the website. You can always visit our repository from Option 1 and take a look at the README without even pulling.
 
+# Navigation
+* To navigate through this repository, make sure to view the different branch options.
+* This **main** branch has the portfolio (also known as our Project Page). 
+* The **Calculator-Project** branch has our calculator project.
+* This README can be found in both branches, so you can refer to these details wherever you are in the repository!
+
 # End Note
 * To learn more about navigating through our website and operating our various calculators you can view the README.mds or even better; you can watch our video guide that will be coming soon!
 * Video Guide Link: - Coming Soon...
