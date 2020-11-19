@@ -1,16 +1,10 @@
 <!doctype html>
 
-<!--
-  Setting up variable used in template
-  "projects" is python object 
--->
-{% set source = projects.get_source() %} <!-- source of project dict -->
-{% set projects = projects.get_projects() %} <!-- projects data -->
+{% set source = projects.get_source() %}
+{% set projects = projects.get_projects() %}
 {% set name = source["name"] %}
-{% set Journal1 = source["Journal1"] %}
-{% set Journal2 = source["Journal2"] %}
-{% set Padlet1 = source["Padlet1"] %}
-{% set Padlet2 = source["Padlet2"] %}
+{% set embedbasic = source["embedbasic"] %}
+{% set embedscientific = source["embedscientific"] %}
 {% set github = source["github"] %}
 
 
@@ -23,50 +17,24 @@
   </head>
 
   <body>
-    <!-- Navigation Bar  -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">{{name}}</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/fundamentals/">Python Fundamentals Project</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/calculator/">Calculator Project</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/journal/">Our Journals</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/ayman/">Ayman</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/pragadeesh/">Pragadeesh</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/brandon/">Brandon</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/ali/">Ali</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/navodit/">Navodit</a>
-                </li>
-            </ul>
+      <a class="navbar-brand" href="/">Main Menu</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/basic/">Basic Calculator</a>
+          <a class="nav-link" href="/scientific/">Scientific Calculator</a>
         </div>
+      </div>
     </nav>
     <div class="container-fluid">
           <div class="row justify-content-end" style="padding-top: 2%; padding-bottom: 2%; padding: 2%;">
             <div class="col-2" style="text-align: right;">
               {% block info %}
-              <!-- notice jinja style variables used in href's -->
-              <a><h5>{{name}}</h5></a>
+                <a><h5>{{name}}</h5></a>
               <a href={{github}} target="_blank"><i class="fa fa-github"></i></a> 
               {% endblock %}
             </div>
@@ -105,28 +73,27 @@
   </body>
 
   {% block script %}
-      <script src="https://threejs.org/build/three.js"></script>
-      <script src="{{ url_for('static', filename='vanta.waves.min.js') }}"></script>
-      <script>
-        VANTA.WAVES({
-          el: "body",
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 800.00,
-          scale: 1.00,
-          scaleMobile: 1.00,
-          wingSpan: 40.0
-        })
-      </script>
+  <script src="https://threejs.org/build/three.js"></script>
+    <script src="{{ url_for('static', filename='vanta.waves.min.js') }}"></script>
+    <script>
+    VANTA.WAVES({
+      el: "body",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 800.00,
+      scale: 1.00,
+      scaleMobile: 1.00
+    })
+  </script>
   {% endblock %}
 
   {% block style %}
   <style>
       html, body {
           margin: 0;
-          height: 175%;
+          height: 100%;
           color: black;
       }
 
@@ -139,7 +106,7 @@
           font-size: 3em;
           letter-spacing: 1em;
           transition: all .2s;
-          color: white;
+          color: black;
       }
 
       .fa:hover{
